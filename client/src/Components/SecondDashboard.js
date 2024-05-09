@@ -9,8 +9,6 @@ const fetchData = async () => {
     const tasksResponse = await axios.get(`${SERVER_URL}/tasks`);
     const tasksData = tasksResponse.data;
 
-    console.log('Tasks data type:', typeof tasksData); // Log the data type of tasksData
-
     // Fetch projects from server
     const projectsResponse = await axios.get(`${SERVER_URL}/projects`);
     const projectsData = projectsResponse.data;
@@ -22,9 +20,21 @@ const fetchData = async () => {
   }
 };
 
-const Dashboard = () => {
-  const [tasks, setTasks] = useState([]); // Ensure tasks is initialized as an empty array
+const fetchTasksForProject = async (projectId) => {
+  try {
+    // Fetch tasks associated with the selected project
+    const tasksResponse = await axios.get(`${SERVER_URL}/projects/${projectId}/tasks`);
+    const tasksData = tasksResponse.data.tasks; // Access tasks data from the response
+    return tasksData;
+  } catch (error) {
+    console.error('Error fetching tasks for project:', error);
+    throw error;
+  }
+};
+const SecondDashboard = () => {
+  const [tasks, setTasks] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [selectedProjectTasks, setSelectedProjectTasks] = useState([]);
 
   useEffect(() => {
     const fetchTasksAndProjects = async () => {
@@ -32,14 +42,11 @@ const Dashboard = () => {
         // Fetch tasks and projects from server
         const { tasks: tasksData, projects: projectsData } = await fetchData();
 
-        console.log('Tasks data:', tasksData); // Log tasks data
-        console.log('Projects data:', projectsData); // Log projects data
-
         // Update tasks state with fetched task data
-        setTasks(tasksData.tasks); // Access .tasks property from tasksData
+        setTasks(tasksData.tasks);
 
         // Update projects state with fetched project data
-        setProjects(projectsData.projects); // Access .projects property from projectsData
+        setProjects(projectsData.projects);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -47,6 +54,16 @@ const Dashboard = () => {
 
     fetchTasksAndProjects();
   }, []);
+
+  const handleProjectClick = async (projectId) => {
+    try {
+      // Fetch and set tasks associated with the selected project
+      const projectTasks = await fetchTasksForProject(projectId);
+      setSelectedProjectTasks(projectTasks);
+    } catch (error) {
+      console.error('Error handling project click:', error);
+    }
+  };
 
   return (
     <div>
@@ -62,8 +79,17 @@ const Dashboard = () => {
       <h1>Projects</h1>
       <ul>
         {projects.map(project => (
-          <li key={`project-${project.id}`}>
+          <li key={`project-${project.id}`} onClick={() => handleProjectClick(project.id)}>
             Project Name: {project.title}
+          </li>
+        ))}
+      </ul>
+
+      <h1>Tasks for Selected Project</h1>
+      <ul>
+        {selectedProjectTasks.map(task => (
+          <li key={`selected-task-${task.id}`}>
+            Task Name: {task.title}
           </li>
         ))}
       </ul>
@@ -71,4 +97,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default SecondDashboard;

@@ -1,6 +1,3 @@
-
-// server.js
-
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -10,46 +7,47 @@ const PORT = 5000;
 
 app.use(cors());
 
-const CLIENT_ID = 'W7jcamg8';
-const CLIENT_SECRET = 'bqiUgdl7VIgCqRhJwbTSWnnjk99md4UqdySbfz43yqJJkKokJSz4KUu3wTMrxPtN';
-const REDIRECT_URI = 'http://localhost:5000/callback'; // Modify to match your server's callback URL
+// Your permanent token
+const PERMANENT_TOKEN = 'eyJ0dCI6InAiLCJhbGciOiJIUzI1NiIsInR2IjoiMSJ9.eyJkIjoie1wiYVwiOjY0NzA1NTEsXCJpXCI6OTA1OTQzOSxcImNcIjo0Njc1ODYzLFwidVwiOjE5MzA5ODQ2LFwiclwiOlwiVVNcIixcInNcIjpbXCJXXCIsXCJGXCIsXCJJXCIsXCJVXCIsXCJLXCIsXCJDXCIsXCJEXCIsXCJNXCIsXCJBXCIsXCJMXCIsXCJQXCJdLFwielwiOltdLFwidFwiOjB9IiwiaWF0IjoxNzE1MjM0NTg3fQ.xYA7ZoO3WAICTV46EVevi0P2nTeezMWe7mh3c3T_AZM';
 
-app.get('/authorize', (req, res) => {
-  // Redirect user to Wrike's authorization URL
-  res.redirect(`https://login.wrike.com/oauth2/authorize/v4?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}`);
-});
-
-app.get('/callback', async (req, res) => {
-  const { code } = req.query;
-
+app.get('/folders/:folderId/tasks', async (req, res) => {
+  const { folderId } = req.params;
   try {
-    // Exchange authorization code for access token
-    const response = await axios.post('https://login.wrike.com/oauth2/token', {
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-      grant_type: 'authorization_code',
-      code,
-      redirect_uri: REDIRECT_URI
-    });
-
-    const accessToken = response.data.access_token;
-
-    // Fetch projects using access token
-    const projectsResponse = await axios.get('https://www.wrike.com/api/v4/folders', {
+    // Fetch tasks associated with the specified folder ID using the permanent token
+    const tasksResponse = await axios.get(`https://www.wrike.com/api/v4/folders/${folderId}/tasks`, {
       headers: {
-        Authorization: `Bearer ${accessToken}`
+        Authorization: `Bearer ${PERMANENT_TOKEN}`
       }
     });
 
-    res.json(projectsResponse.data.data);
+    const tasks = tasksResponse.data.data;
+    res.json({ tasks }); // Return tasks data
   } catch (error) {
-    console.error('Error:', error.response.data);
-    res.status(500).json({ error: 'An error occurred while fetching projects' });
+    console.error(`Error fetching tasks for folder ${folderId}:`, error.response.data);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
+app.get('/tasks', async (req, res) => {
+  try {
+    // Fetch tasks using the permanent token
+    const tasksResponse = await axios.get('https://www.wrike.com/api/v4/tasks', {
+      headers: {
+        Authorization: `Bearer ${PERMANENT_TOKEN}`
+      }
+    });
+
+    const tasks = tasksResponse.data.data;
+    res.json({ tasks }); // Return tasks data
+  } catch (error) {
+    console.error('Error fetching tasks:', error.response.data);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
 

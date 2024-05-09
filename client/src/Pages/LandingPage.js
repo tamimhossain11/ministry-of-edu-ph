@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 import './LndingPage.css'; // Import your CSS file for styling
+import SecondDashboard from '../Components/SecondDashboard';
 
 const LandingPage = () => {
   return (
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <footer>
         <p>&copy; Ministry of Education Facilities Management</p>
       </footer>
+      <SecondDashboard/>
     </div>
   );
 }
