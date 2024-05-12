@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const SERVER_URL = 'http://localhost:5000'; // Update with your server's URL
+const SERVER_URL = 'http://localhost:4321'; // Update with your server's URL
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
