@@ -1,22 +1,5 @@
 
-.menu {
-  background-color: #000;
-  text-align: center;
-  padding: 15px 0;
-}
-
-.menu .menuItem {
-  display: inline-block;
-  margin: 0 30px;
-}
-
-.menu .menuItem a {
-  color: #fff;
-  text-decoration: none;
-}
-
 .page {
-  padding: 30px;
 }
 
 .page h2 {
@@ -59,3 +42,18 @@
   color: #fff;
 }
 
+.menu {
+  background-color: #000;
+  text-align: center;
+  padding: 150px 0;
+}
+
+.menu .menuItem {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.menu .menuItem a {
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,27 @@
+.hero {
+    height: 15vh; /* 25% of the viewport height */
+    background-image: url('../../resources/images/bg1.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the background image */
+    color: #ffffff; /* Text color */
+    text-align: center; /* Center-align text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Additional styles for text content within the hero */
+  .hero-content {
+    padding-top: 60px;
+    max-width: 600px; /* Example: Limit content width */
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+  }
+  
