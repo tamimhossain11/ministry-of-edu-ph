@@ -3,9 +3,9 @@ export const Portal2 = () => {
 
     return (
          <div className="page">
+            <h2>Team Portal 2</h2>
+              <p>Works on progress</p>
           <Dashboard/>
-              <h2>Members area</h2>
-              <p>This is the private members area</p>
          </div>
     )
 }

@@ -1,6 +1,3 @@
-
-// server.js
-
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -12,7 +9,7 @@ app.use(cors());
 
 const CLIENT_ID = 'W7jcamg8';
 const CLIENT_SECRET = 'bqiUgdl7VIgCqRhJwbTSWnnjk99md4UqdySbfz43yqJJkKokJSz4KUu3wTMrxPtN';
-const REDIRECT_URI = 'http://localhost:5000/callback'; // Modify to match your server's callback URL
+const REDIRECT_URI = 'http://localhost:5000/callback'; 
 
 app.get('/authorize', (req, res) => {
   // Redirect user to Wrike's authorization URL

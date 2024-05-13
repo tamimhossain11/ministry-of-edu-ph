@@ -5,7 +5,7 @@ export const Home = () => {
     return (
         
          <div className="page">
-             <h1>Hi Buddy its build by tamim</h1>
+             <h1>Home page planning on progress</h1>
          </div>
     )
 }

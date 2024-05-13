@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const SERVER_URL = 'http://localhost:4321'; // Update with your server's URL
+const SERVER_URL = 'http://localhost:4321';
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   return (
     <div>
-       <h1>Projects</h1>
+      <h1>Projects</h1>
       <ul>
         {projects.map(project => (
           <li key={`project-${project.id}`} onClick={() => handleProjectClick(project.id)}>
@@ -57,7 +57,7 @@ const Dashboard = () => {
         ))}
       </ul>
 
-     
+
     </div>
   );
 };

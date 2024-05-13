@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { RenderHeader,RenderRoutes} from "../Components/structure/Header";
+import { RenderHeader, RenderRoutes } from "../Components/structure/Header";
 import Hero from "../Components/Hero/Hero";
 
 const AuthContext = createContext();
@@ -55,8 +55,8 @@ export const AuthWrapper = ({ children }) => {
     <AuthContext.Provider value={{ user, login, logout }}>
       <>
         <RenderHeader user={user} />
-        <Hero/>
-        <RenderRoutes user={user} />     
+        <Hero />
+        <RenderRoutes user={user} />
       </>
     </AuthContext.Provider>
   );
