@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import logo from '../../resources/images/logoname.png'
+import logo from '../../resources/images/logoname3.png'
 import { Link, Route, Routes } from "react-router-dom";
 import { AuthData } from "../../auth/AuthWrapper";
 import { nav } from "./nav";
@@ -65,7 +65,7 @@ export const RenderHeader = () => {
                         </div>
                     ) : (
                         <div className="nav-item">
-                            <Link to={"login"}>Log in</Link>
+                            <Link to={"login"}>Explore Portal</Link>
                         </div>
                     )}
                 </ul>

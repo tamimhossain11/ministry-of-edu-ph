@@ -1,0 +1,36 @@
+/********** Template CSS **********/
+:root {
+    --primary: #1A237E;
+    --secondary: #ffc448;
+    --light: #fafafb;
+    --dark: #12141d;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+  }
+  
+  .my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+  
+  .py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  
+  /*** About ***/
+  #about .years .display-1 {
+    font-size: 10rem;
+    line-height: 9rem;
+  }
+  
+  #about .years h5 {
+    letter-spacing: 30px;
+    margin-right: -30px;
+  }

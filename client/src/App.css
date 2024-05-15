@@ -1,5 +1,6 @@
 
 .page {
+ 
 }
 
 .page h2 {
@@ -57,3 +58,23 @@
   color: #fff;
   text-decoration: none;
 }
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 1rem;
+}
+
