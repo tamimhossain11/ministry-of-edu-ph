@@ -14,7 +14,7 @@ export const Home = () => {
             <HeroSection className="light hero">
                 <div className="heroInner">
                     <span>
-                        <h1>wellcome to the</h1> 
+                        <h1>welcome to the</h1> 
                         <h1> Department of Education</h1>
                         <hr/>
                         <h3>School Infrustructure And Facilities</h3>

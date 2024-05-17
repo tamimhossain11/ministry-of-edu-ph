@@ -1,0 +1,54 @@
+.portal1-side-nav {
+  width: 250px;
+  background-color: #00003a;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.portal1-side-nav .nav-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.portal1-side-nav .nav-item {
+  padding: 15px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.portal1-side-nav .nav-item button {
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.portal1-side-nav .nav-item button:hover {
+  background-color: #3e3e5c;
+  color: #ffcc00;
+}
+
+.portal1-side-nav .nav-item.active button {
+  background-color: #575757;
+  color: #ffcc00;
+}
+
+.portal1-side-nav .nav-item button:focus {
+  outline: none;
+}
+
+.portal1-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow: auto;
+}
