@@ -58,7 +58,7 @@ export const AuthWrapper = ({ children }) => {
         <RenderHeader user={user} />
         <Hero />
         <RenderRoutes user={user} />
-        <Footer/>
+        <Footer />
       </>
     </AuthContext.Provider>
   );

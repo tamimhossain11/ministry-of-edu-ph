@@ -9,27 +9,27 @@ import OverflowCard from '../../Components/cards/card2';
 
 export const Home = () => {
 
-    return (
-        <div>
-            <HeroSection className="light hero">
-                <div className="heroInner">
-                    <span>
-                        <h1>welcome to the</h1> 
-                        <h1> Department of Education</h1>
-                        <hr/>
-                        <h3>School Infrustructure And Facilities</h3>
-                        <a href="#" className="btn btn-light">
-                            Explore Now
-                        </a>
-                    </span>
-                </div>
-            </HeroSection>
-          <About/>
-          <Carousel1/>
-          <OverflowCard/>
+  return (
+    <div>
+      <HeroSection className="light hero">
+        <div className="heroInner">
+          <span>
+            <h1>welcome to the</h1>
+            <h1> Department of Education</h1>
+            <hr />
+            <h3>School Infrustructure And Facilities</h3>
+            <a href="#" className="btn btn-light">
+              Explore Now
+            </a>
+          </span>
         </div>
-      
-    )
+      </HeroSection>
+      <About />
+      <Carousel1 />
+      <OverflowCard />
+    </div>
+
+  )
 }
 
 const HeroSection = styled.section`
