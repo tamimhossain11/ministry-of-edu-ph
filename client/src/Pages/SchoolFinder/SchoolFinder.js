@@ -24,7 +24,7 @@ export const SchoolFinder = () => {
     return (
         <div className="page">
             <h2>School Finder Search</h2>
-            <p>A sample tableau integration</p>
+            <p>A demo tableau integration</p>
             <div className='tableauPlaceholder' id='viz1716061213364' style={{ position: 'relative' }}>
                 <noscript>
                     <a href='https://developer.salesforce.com/'>
