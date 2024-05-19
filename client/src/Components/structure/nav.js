@@ -1,4 +1,4 @@
-import { About } from "../../Pages/About";
+import { About } from "../../Pages/About/About";
 import { Account } from "../../Pages/Account";
 import { Home } from "../../Pages/Home/Home";
 import { Login } from "../../Pages/Login";
