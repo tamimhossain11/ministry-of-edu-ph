@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-import './Home.css'
+import './Home.css';
 import About from "../../Components/aboutcard/about";
 import Carousel1 from '../../Components/carousel/carousel1';
 import OverflowCard from '../../Components/cards/card2';
-
-
+import backgroundImage from '../../resources/images/home1.jpg'; // Import your local image
 
 export const Home = () => {
 
@@ -28,14 +27,13 @@ export const Home = () => {
       <Carousel1 />
       <OverflowCard />
     </div>
-
   )
 }
 
 const HeroSection = styled.section`
-  position: relative; /* Add relative positioning to the HeroSection */
+  position: relative;
   background: linear-gradient(to bottom, #0a0c2c80 3rem, transparent 10rem),
-    url(https://images.pexels.com/photos/133325/pexels-photo-133325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=600&dpr=1);
+    url(${backgroundImage}); // Use the imported image here
   background-position: center, bottom left;
   background-size: cover, cover;
   height: fit-content;
@@ -48,9 +46,9 @@ const HeroSection = styled.section`
     margin: 0 auto;
   }
   span {
-    position: absolute; /* Set the position to fixed */
-    left: 8%; /* Position it to the left side of the screen */
-    top: 50%; /* Adjust top position if needed */
+    position: absolute;
+    left: 8%;
+    top: 50%;
     transform: translateY(-50%);
     max-width: 100%;
     align-items: start;
@@ -63,7 +61,7 @@ const HeroSection = styled.section`
   }
   @media (max-width: 576px) {
     background: linear-gradient(to bottom, #0a0c2c80 3rem, transparent),
-      url(https://images.pexels.com/photos/133325/pexels-photo-133325.jpeg?auto=compress&cs=tinysrgb&w=800&h=750&dpr=1);
+      url(${backgroundImage});
     background-position: center, bottom left;
     background-size: cover, cover;
     align-items: flex-start;
