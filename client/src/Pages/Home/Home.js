@@ -15,7 +15,7 @@ export const Home = () => {
           <span>
             <h1>welcome to the</h1>
             <h1> Department of Education</h1>
-            <hr />
+            <hr/>
             <h3>School Infrustructure And Facilities</h3>
             <a href="#" className="btn btn-light">
               Explore Now

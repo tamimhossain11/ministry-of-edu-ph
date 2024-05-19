@@ -5,7 +5,10 @@ import CardContent from '@mui/joy/CardContent';
 import CardOverflow from '@mui/joy/CardOverflow';
 import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
-
+import cimage1 from '../../resources/images/card1.jpg'
+import cimage2 from '../../resources/images/card2.jpg'
+import cimage3 from '../../resources/images/card3.jpg'
+import cimage4 from '../../resources/images/card4.jpg'
 
 export default function OverflowCard() {
   return (
@@ -14,8 +17,8 @@ export default function OverflowCard() {
       <CardOverflow>
         <AspectRatio ratio="2">
           <img
-            src="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318"
-            srcSet="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318&dpr=2 2x"
+            src={cimage1}
+            srcSet={cimage1}
             loading="lazy"
             alt=""
           />
@@ -43,8 +46,8 @@ export default function OverflowCard() {
       <CardOverflow>
         <AspectRatio ratio="2">
           <img
-            src="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318"
-            srcSet="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318&dpr=2 2x"
+            src={cimage2}
+            srcSet={cimage2}
             loading="lazy"
             alt=""
           />
@@ -72,8 +75,8 @@ export default function OverflowCard() {
       <CardOverflow>
         <AspectRatio ratio="2">
           <img
-            src="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318"
-            srcSet="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318&dpr=2 2x"
+            src={cimage3}
+            srcSet={cimage3}
             loading="lazy"
             alt=""
           />
@@ -100,8 +103,8 @@ export default function OverflowCard() {
       <CardOverflow>
         <AspectRatio ratio="2">
           <img
-            src="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318"
-            srcSet="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318&dpr=2 2x"
+            src={cimage4}
+            srcSet={cimage4}
             loading="lazy"
             alt=""
           />
