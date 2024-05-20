@@ -42,7 +42,7 @@ export const Portal1 = () => {
       case 'dashboard':
         return (
           <iframe
-            src="https://storage.www.wrike.com/analyze_public_link/YltRkTMOgrPBvFeg5AdGH5JFOzHgLaMoqK0vKfO6Tc83FKhAlii45bwa82KuO6D7?acc=6470551"
+            src="https://www.wrike.com/frontend/wrike_analyze_board_export_preview_app/index.html?reportId=74627746"
             title="Wrike Dashboard"
             width="100%"
             height="1000"
